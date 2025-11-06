@@ -1,9 +1,10 @@
-// === enviar.js (versão com horário comercial e dias úteis) ===
+// === enviar.js (horário comercial + dias úteis + keep-alive) ===
 import fs from "fs";
 import { setTimeout as wait } from "timers/promises";
 import fetch from "node-fetch";
 import mensagens from "./mensagens.js";
 import dotenv from "dotenv";
+import express from "express"; // 👈 keep-alive
 dotenv.config();
 
 // === CONFIGURAÇÕES DE ARQUIVOS ===
@@ -13,7 +14,8 @@ const PROGRESS_FILE = "./progress.json";
 
 // === VARIÁVEIS DE AMBIENTE ===
 const WHATSGW_TOKEN = process.env.WHATSGW_TOKEN;
-const WHATSGW_URL = process.env.WHATSGW_URL || "https://app.whatsgw.com.br/api/WhatsGw/Send";
+const WHATSGW_URL =
+  process.env.WHATSGW_URL || "https://app.whatsgw.com.br/api/WhatsGw/Send";
 const FROM_NUMBER = process.env.FROM_NUMBER || "";
 
 if (!WHATSGW_TOKEN) {
@@ -36,18 +38,18 @@ try {
 // === CONFIGURAÇÕES DE INTERVALO ===
 const INTERVALO_MIN_MINUTOS = 15; // mínimo entre mensagens
 const INTERVALO_MAX_MINUTOS = 35; // máximo entre mensagens
-const TAMANHO_LOTE = 8; // após 8 mensagens, pausa longa
-const PAUSA_LOTE_MIN_MINUTOS = 60; // 1h00
+const TAMANHO_LOTE = 8;           // após 8 mensagens, pausa longa
+const PAUSA_LOTE_MIN_MINUTOS = 60; // 1h
 const PAUSA_LOTE_MAX_MINUTOS = 120; // 2h
 
-// === HORÁRIO COMERCIAL ===
+// === HORÁRIO COMERCIAL / DIAS ÚTEIS ===
 const BUSINESS_TZ = process.env.BUSINESS_TZ || "America/Sao_Paulo";
 const BUSINESS_START = process.env.BUSINESS_START || "08:00"; // HH:mm
 const BUSINESS_END = process.env.BUSINESS_END || "21:00";     // HH:mm
 const BUSINESS_DAYS = (process.env.BUSINESS_DAYS || "1,2,3,4,5,6")
   .split(",")
   .map(n => Number(n.trim()))
-  .filter(n => !Number.isNaN(n)); // dias permitidos (0=Dom ... 6=Sáb)
+  .filter(n => !Number.isNaN(n)); // 0=Dom ... 6=Sáb
 
 function nowInTZ() {
   const s = new Date().toLocaleString("en-US", { timeZone: BUSINESS_TZ });
@@ -84,10 +86,9 @@ function msUntilNextStart() {
   const now = nowInTZ();
   const { h: sh, m: sm } = parseHM(BUSINESS_START);
   const todayStart = new Date(now); todayStart.setHours(sh, sm, 0, 0);
-
   if (now < todayStart && isBusinessDay(now)) return todayStart - now;
   const next = nextAllowedStartFrom(now);
-  return next ? next - now : 12 * 60 * 60 * 1000;
+  return next ? next - now : 12 * 60 * 60 * 1000; // fallback 12h
 }
 async function waitForBusinessWindow() {
   if (isWithinBusinessHours()) return;
@@ -160,8 +161,7 @@ async function tentarEnviarFormato(contato, mensagem) {
 async function enviarParaContato(contato) {
   const text = escolherMensagem(contato.nome);
   log(`Enviando para ${contato.nome} (${contato.numero}) - msg: "${text}"`);
-  const resultado = await tentarEnviarFormato(contato, text);
-  return resultado;
+  return await tentarEnviarFormato(contato, text);
 }
 
 // === MAIN ===
@@ -170,7 +170,7 @@ async function main() {
   let enviosNesteLote = 0;
 
   for (const [index, contato] of contatos.entries()) {
-    await waitForBusinessWindow(); // 👈 pausa fora do horário comercial
+    await waitForBusinessWindow(); // pausa fora do horário/dia
 
     if (!contato.numero || !contato.nome) {
       log(`Pulando contato inválido: ${JSON.stringify(contato)}`);
@@ -218,3 +218,11 @@ process.on("SIGINT", () => {
 });
 
 main();
+
+// === KEEP-ALIVE SERVER (Railway) ===
+const app = express();
+app.get("/", (_req, res) => res.send("✅ Whats-Prospect ativo!"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  log(`Servidor keep-alive rodando na porta ${PORT}`);
+});
