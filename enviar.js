@@ -1,78 +1,27 @@
-// === enviar.js ===
-// Execução com janela de horário comercial + keep-alive Railway (Express)
-
+// === enviar.js (versão com horário comercial e dias úteis) ===
 import fs from "fs";
 import { setTimeout as wait } from "timers/promises";
 import fetch from "node-fetch";
 import mensagens from "./mensagens.js";
 import dotenv from "dotenv";
-import express from "express";
 dotenv.config();
 
-// ============ ARQUIVOS ============
+// === CONFIGURAÇÕES DE ARQUIVOS ===
 const CONTACTS_FILE = "./contacts.json";
 const LOG_FILE = "./enviar.log";
 const PROGRESS_FILE = "./progress.json";
 
-// ============ ENV ============
+// === VARIÁVEIS DE AMBIENTE ===
 const WHATSGW_TOKEN = process.env.WHATSGW_TOKEN;
-const WHATSGW_URL =
-  process.env.WHATSGW_URL || "https://app.whatsgw.com.br/api/WhatsGw/Send";
+const WHATSGW_URL = process.env.WHATSGW_URL || "https://app.whatsgw.com.br/api/WhatsGw/Send";
 const FROM_NUMBER = process.env.FROM_NUMBER || "";
 
-// janela comercial (personalizável por env)
-const BUSINESS_TZ = process.env.BUSINESS_TZ || "America/Sao_Paulo";
-const BUSINESS_START = process.env.BUSINESS_START || "08:00"; // HH:mm
-const BUSINESS_END = process.env.BUSINESS_END || "21:00";     // HH:mm
-
 if (!WHATSGW_TOKEN) {
-  console.error("ERRO: coloque WHATSGW_TOKEN no .env / Railway Variables");
+  console.error("ERRO: coloque WHATSGW_TOKEN no .env");
   process.exit(1);
 }
 
-// ============ HORÁRIO COMERCIAL ============
-function nowInTZ() {
-  // cria Date “convertida” para o fuso alvo
-  const s = new Date().toLocaleString("en-US", { timeZone: BUSINESS_TZ });
-  return new Date(s);
-}
-function parseHM(hm) {
-  const [h, m] = hm.split(":").map(Number);
-  return { h, m };
-}
-function isWithinBusinessHours() {
-  const now = nowInTZ();
-  const { h: sh, m: sm } = parseHM(BUSINESS_START);
-  const { h: eh, m: em } = parseHM(BUSINESS_END);
-  const start = new Date(now);
-  start.setHours(sh, sm, 0, 0);
-  const end = new Date(now);
-  end.setHours(eh, em, 0, 0);
-  return now >= start && now < end;
-}
-function msUntilNextStart() {
-  const now = nowInTZ();
-  const { h: sh, m: sm } = parseHM(BUSINESS_START);
-  const startToday = new Date(now);
-  startToday.setHours(sh, sm, 0, 0);
-  const startTomorrow = new Date(startToday);
-  startTomorrow.setDate(startTomorrow.getDate() + 1);
-  if (now < startToday) return startToday - now;
-  return startTomorrow - now;
-}
-async function waitForBusinessWindow() {
-  if (isWithinBusinessHours()) return;
-  const ms = msUntilNextStart();
-  const min = Math.ceil(ms / 60000);
-  log(
-    `[scheduler] Fora do horário (${BUSINESS_START}-${BUSINESS_END} ${BUSINESS_TZ}). Aguardando ~${min} min para reabrir.`
-  );
-  // dorme no máximo 1h por vez e re-checa (para permitir reimplantação suave)
-  await wait(Math.min(ms, 60 * 60 * 1000));
-  return waitForBusinessWindow();
-}
-
-// ============ LEITURA DE CONTATOS ============
+// === LEITURA DE CONTATOS ===
 let contatos;
 try {
   contatos = JSON.parse(fs.readFileSync(CONTACTS_FILE, "utf8"));
@@ -84,18 +33,77 @@ try {
   process.exit(1);
 }
 
-// ============ INTERVALOS ============
-const INTERVALO_MIN_MINUTOS = 15;
-const INTERVALO_MAX_MINUTOS = 35;
+// === CONFIGURAÇÕES DE INTERVALO ===
+const INTERVALO_MIN_MINUTOS = 15; // mínimo entre mensagens
+const INTERVALO_MAX_MINUTOS = 35; // máximo entre mensagens
+const TAMANHO_LOTE = 8; // após 8 mensagens, pausa longa
+const PAUSA_LOTE_MIN_MINUTOS = 60; // 1h00
+const PAUSA_LOTE_MAX_MINUTOS = 120; // 2h
 
-const TAMANHO_LOTE = 8;
-const PAUSA_LOTE_MIN_MINUTOS = 60;
-const PAUSA_LOTE_MAX_MINUTOS = 120;
+// === HORÁRIO COMERCIAL ===
+const BUSINESS_TZ = process.env.BUSINESS_TZ || "America/Sao_Paulo";
+const BUSINESS_START = process.env.BUSINESS_START || "08:00"; // HH:mm
+const BUSINESS_END = process.env.BUSINESS_END || "21:00";     // HH:mm
+const BUSINESS_DAYS = (process.env.BUSINESS_DAYS || "1,2,3,4,5,6")
+  .split(",")
+  .map(n => Number(n.trim()))
+  .filter(n => !Number.isNaN(n)); // dias permitidos (0=Dom ... 6=Sáb)
 
-// ============ UTILS ============
+function nowInTZ() {
+  const s = new Date().toLocaleString("en-US", { timeZone: BUSINESS_TZ });
+  return new Date(s);
+}
+function parseHM(hm) {
+  const [h, m] = hm.split(":").map(Number);
+  return { h, m };
+}
+function isBusinessDay(d = nowInTZ()) {
+  return BUSINESS_DAYS.includes(d.getDay());
+}
+function isWithinBusinessHours() {
+  const now = nowInTZ();
+  if (!isBusinessDay(now)) return false;
+  const { h: sh, m: sm } = parseHM(BUSINESS_START);
+  const { h: eh, m: em } = parseHM(BUSINESS_END);
+  const start = new Date(now); start.setHours(sh, sm, 0, 0);
+  const end   = new Date(now); end.setHours(eh, em, 0, 0);
+  return now >= start && now < end;
+}
+function nextAllowedStartFrom(d) {
+  const { h: sh, m: sm } = parseHM(BUSINESS_START);
+  let cur = new Date(d);
+  for (let i = 0; i < 8; i++) {
+    const candidate = new Date(cur);
+    candidate.setHours(sh, sm, 0, 0);
+    if (isBusinessDay(candidate) && candidate > d) return candidate;
+    cur.setDate(cur.getDate() + 1);
+  }
+  return null;
+}
+function msUntilNextStart() {
+  const now = nowInTZ();
+  const { h: sh, m: sm } = parseHM(BUSINESS_START);
+  const todayStart = new Date(now); todayStart.setHours(sh, sm, 0, 0);
+
+  if (now < todayStart && isBusinessDay(now)) return todayStart - now;
+  const next = nextAllowedStartFrom(now);
+  return next ? next - now : 12 * 60 * 60 * 1000;
+}
+async function waitForBusinessWindow() {
+  if (isWithinBusinessHours()) return;
+  const ms = msUntilNextStart();
+  const min = Math.ceil(ms / 60000);
+  console.log(
+    `[scheduler] Fora do horário/dia (${BUSINESS_START}-${BUSINESS_END} ${BUSINESS_TZ} | dias ${BUSINESS_DAYS.join(",")}). Aguardando ~${min} min.`
+  );
+  await wait(Math.min(ms, 60 * 60 * 1000)); // reavalia a cada 1h
+  return waitForBusinessWindow();
+}
+
+// === FUNÇÕES AUXILIARES ===
 function log(msg) {
   const linha = `[${new Date().toISOString()}] ${msg}\n`;
-  try { fs.appendFileSync(LOG_FILE, linha); } catch {}
+  fs.appendFileSync(LOG_FILE, linha);
   console.log(linha.trim());
 }
 function escolherMensagem(nome) {
@@ -103,12 +111,11 @@ function escolherMensagem(nome) {
   return template.replace(/\[nome\]/g, nome);
 }
 function getPausaAleatoriaMs(minMinutos, maxMinutos) {
-  const minutos =
-    Math.floor(Math.random() * (maxMinutos - minMinutos + 1)) + minMinutos;
+  const minutos = Math.floor(Math.random() * (maxMinutos - minMinutos + 1)) + minMinutos;
   return minutos * 60 * 1000;
 }
 
-// ============ PROGRESSO ============
+// === PERSISTÊNCIA DE PROGRESSO ===
 let progresso = { enviados: [], ultimoIndex: -1 };
 try {
   if (fs.existsSync(PROGRESS_FILE)) {
@@ -118,7 +125,7 @@ try {
   log("progress.json não encontrado, criando novo...");
 }
 
-// ============ ENVIO ============
+// === ENVIO PARA A API ===
 async function tentarEnviarFormato(contato, mensagem) {
   try {
     const body = {
@@ -137,7 +144,6 @@ async function tentarEnviarFormato(contato, mensagem) {
     });
 
     const text = await res.text();
-
     if (res.ok) {
       log(`OK (${res.status}) -> ${text.slice(0, 200)}`);
       return { success: true, status: res.status, body: text };
@@ -154,25 +160,18 @@ async function tentarEnviarFormato(contato, mensagem) {
 async function enviarParaContato(contato) {
   const text = escolherMensagem(contato.nome);
   log(`Enviando para ${contato.nome} (${contato.numero}) - msg: "${text}"`);
-  return await tentarEnviarFormato(contato, text);
+  const resultado = await tentarEnviarFormato(contato, text);
+  return resultado;
 }
 
-// ============ MAIN ============
+// === MAIN ===
 async function main() {
   log("=== INÍCIO DO ROTEIRO ===");
-
-  // espera abrir janela comercial antes de começar
-  await waitForBusinessWindow();
-
   let enviosNesteLote = 0;
 
   for (const [index, contato] of contatos.entries()) {
-    // Se sair do horário no meio do processo, pausa até reabrir
-    if (!isWithinBusinessHours()) {
-      await waitForBusinessWindow();
-    }
+    await waitForBusinessWindow(); // 👈 pausa fora do horário comercial
 
-    // Pula contatos inválidos ou já enviados
     if (!contato.numero || !contato.nome) {
       log(`Pulando contato inválido: ${JSON.stringify(contato)}`);
       continue;
@@ -182,24 +181,20 @@ async function main() {
       continue;
     }
 
-    // Envia
     const resultado = await enviarParaContato(contato);
     if (resultado.success) {
       progresso.enviados.push(contato.numero);
       progresso.ultimoIndex = index;
-      try { fs.writeFileSync(PROGRESS_FILE, JSON.stringify(progresso, null, 2)); } catch {}
+      fs.writeFileSync(PROGRESS_FILE, JSON.stringify(progresso, null, 2));
     }
 
     enviosNesteLote++;
-
     if (index === contatos.length - 1) {
       log("Último contato da lista enviado.");
       break;
     }
 
-    // Pausa
-    let msPausa;
-    let tipoPausa;
+    let msPausa, tipoPausa;
     if (enviosNesteLote >= TAMANHO_LOTE) {
       msPausa = getPausaAleatoriaMs(PAUSA_LOTE_MIN_MINUTOS, PAUSA_LOTE_MAX_MINUTOS);
       tipoPausa = `LONGA (lote de ${TAMANHO_LOTE})`;
@@ -209,38 +204,17 @@ async function main() {
       tipoPausa = "curta";
     }
 
-    const minutos = Math.round(msPausa / 60000);
+    const minutos = Math.round(msPausa / (60 * 1000));
     log(`Aguardando ${minutos} minutos (pausa ${tipoPausa})...`);
-
-    // Durante a pausa curta/longa, se virar fora de horário, interrompe espera longa
-    const step = 60 * 1000; // checa a cada 1 min
-    let restante = msPausa;
-    while (restante > 0) {
-      // se saiu da janela, aguarda até reabrir
-      if (!isWithinBusinessHours()) {
-        await waitForBusinessWindow();
-      }
-      const s = Math.min(step, restante);
-      await wait(s);
-      restante -= s;
-    }
+    await wait(msPausa);
   }
 
   log("=== ROTEIRO FINALIZADO ===");
 }
 
-// encerra limpo
 process.on("SIGINT", () => {
   log("Recebido SIGINT (Ctrl+C). Encerrando...");
   process.exit(0);
 });
 
-// keep-alive Railway (evita “hibernar”)
-const app = express();
-app.get("/", (_req, res) => res.send("whats-prospect ativo"));
-app.listen(process.env.PORT || 3000);
-
-main().catch((e) => {
-  log("Erro fatal no main: " + e.message);
-  process.exit(1);
-});
+main();
