@@ -1,27 +1,78 @@
-// === enviar.js (versão final, sem horário comercial e com pausa reduzida) ===
+// === enviar.js ===
+// Execução com janela de horário comercial + keep-alive Railway (Express)
+
 import fs from "fs";
 import { setTimeout as wait } from "timers/promises";
 import fetch from "node-fetch";
 import mensagens from "./mensagens.js";
 import dotenv from "dotenv";
+import express from "express";
 dotenv.config();
 
-// === CONFIGURAÇÕES DE ARQUIVOS ===
+// ============ ARQUIVOS ============
 const CONTACTS_FILE = "./contacts.json";
 const LOG_FILE = "./enviar.log";
 const PROGRESS_FILE = "./progress.json";
 
-// === VARIÁVEIS DE AMBIENTE ===
+// ============ ENV ============
 const WHATSGW_TOKEN = process.env.WHATSGW_TOKEN;
-const WHATSGW_URL = process.env.WHATSGW_URL || "https://app.whatsgw.com.br/api/WhatsGw/Send";
+const WHATSGW_URL =
+  process.env.WHATSGW_URL || "https://app.whatsgw.com.br/api/WhatsGw/Send";
 const FROM_NUMBER = process.env.FROM_NUMBER || "";
 
+// janela comercial (personalizável por env)
+const BUSINESS_TZ = process.env.BUSINESS_TZ || "America/Sao_Paulo";
+const BUSINESS_START = process.env.BUSINESS_START || "08:00"; // HH:mm
+const BUSINESS_END = process.env.BUSINESS_END || "21:00";     // HH:mm
+
 if (!WHATSGW_TOKEN) {
-  console.error("ERRO: coloque WHATSGW_TOKEN no .env");
+  console.error("ERRO: coloque WHATSGW_TOKEN no .env / Railway Variables");
   process.exit(1);
 }
 
-// === LEITURA DE CONTATOS ===
+// ============ HORÁRIO COMERCIAL ============
+function nowInTZ() {
+  // cria Date “convertida” para o fuso alvo
+  const s = new Date().toLocaleString("en-US", { timeZone: BUSINESS_TZ });
+  return new Date(s);
+}
+function parseHM(hm) {
+  const [h, m] = hm.split(":").map(Number);
+  return { h, m };
+}
+function isWithinBusinessHours() {
+  const now = nowInTZ();
+  const { h: sh, m: sm } = parseHM(BUSINESS_START);
+  const { h: eh, m: em } = parseHM(BUSINESS_END);
+  const start = new Date(now);
+  start.setHours(sh, sm, 0, 0);
+  const end = new Date(now);
+  end.setHours(eh, em, 0, 0);
+  return now >= start && now < end;
+}
+function msUntilNextStart() {
+  const now = nowInTZ();
+  const { h: sh, m: sm } = parseHM(BUSINESS_START);
+  const startToday = new Date(now);
+  startToday.setHours(sh, sm, 0, 0);
+  const startTomorrow = new Date(startToday);
+  startTomorrow.setDate(startTomorrow.getDate() + 1);
+  if (now < startToday) return startToday - now;
+  return startTomorrow - now;
+}
+async function waitForBusinessWindow() {
+  if (isWithinBusinessHours()) return;
+  const ms = msUntilNextStart();
+  const min = Math.ceil(ms / 60000);
+  log(
+    `[scheduler] Fora do horário (${BUSINESS_START}-${BUSINESS_END} ${BUSINESS_TZ}). Aguardando ~${min} min para reabrir.`
+  );
+  // dorme no máximo 1h por vez e re-checa (para permitir reimplantação suave)
+  await wait(Math.min(ms, 60 * 60 * 1000));
+  return waitForBusinessWindow();
+}
+
+// ============ LEITURA DE CONTATOS ============
 let contatos;
 try {
   contatos = JSON.parse(fs.readFileSync(CONTACTS_FILE, "utf8"));
@@ -33,32 +84,31 @@ try {
   process.exit(1);
 }
 
-// === CONFIGURAÇÕES DE INTERVALO ===
-const INTERVALO_MIN_MINUTOS = 15; // mínimo entre mensagens
-const INTERVALO_MAX_MINUTOS = 35; // máximo entre mensagens
+// ============ INTERVALOS ============
+const INTERVALO_MIN_MINUTOS = 15;
+const INTERVALO_MAX_MINUTOS = 35;
 
-const TAMANHO_LOTE = 8; // após 8 mensagens, pausa longa
-const PAUSA_LOTE_MIN_MINUTOS = 60; // 1h00
-const PAUSA_LOTE_MAX_MINUTOS = 120; // 2h
+const TAMANHO_LOTE = 8;
+const PAUSA_LOTE_MIN_MINUTOS = 60;
+const PAUSA_LOTE_MAX_MINUTOS = 120;
 
-// === FUNÇÕES AUXILIARES ===
+// ============ UTILS ============
 function log(msg) {
   const linha = `[${new Date().toISOString()}] ${msg}\n`;
-  fs.appendFileSync(LOG_FILE, linha);
+  try { fs.appendFileSync(LOG_FILE, linha); } catch {}
   console.log(linha.trim());
 }
-
 function escolherMensagem(nome) {
   const template = mensagens[Math.floor(Math.random() * mensagens.length)];
   return template.replace(/\[nome\]/g, nome);
 }
-
 function getPausaAleatoriaMs(minMinutos, maxMinutos) {
-  const minutos = Math.floor(Math.random() * (maxMinutos - minMinutos + 1)) + minMinutos;
+  const minutos =
+    Math.floor(Math.random() * (maxMinutos - minMinutos + 1)) + minMinutos;
   return minutos * 60 * 1000;
 }
 
-// === PERSISTÊNCIA DE PROGRESSO ===
+// ============ PROGRESSO ============
 let progresso = { enviados: [], ultimoIndex: -1 };
 try {
   if (fs.existsSync(PROGRESS_FILE)) {
@@ -68,7 +118,7 @@ try {
   log("progress.json não encontrado, criando novo...");
 }
 
-// === ENVIO PARA A API ===
+// ============ ENVIO ============
 async function tentarEnviarFormato(contato, mensagem) {
   try {
     const body = {
@@ -104,16 +154,24 @@ async function tentarEnviarFormato(contato, mensagem) {
 async function enviarParaContato(contato) {
   const text = escolherMensagem(contato.nome);
   log(`Enviando para ${contato.nome} (${contato.numero}) - msg: "${text}"`);
-  const resultado = await tentarEnviarFormato(contato, text);
-  return resultado;
+  return await tentarEnviarFormato(contato, text);
 }
 
-// === MAIN ===
+// ============ MAIN ============
 async function main() {
   log("=== INÍCIO DO ROTEIRO ===");
+
+  // espera abrir janela comercial antes de começar
+  await waitForBusinessWindow();
+
   let enviosNesteLote = 0;
 
   for (const [index, contato] of contatos.entries()) {
+    // Se sair do horário no meio do processo, pausa até reabrir
+    if (!isWithinBusinessHours()) {
+      await waitForBusinessWindow();
+    }
+
     // Pula contatos inválidos ou já enviados
     if (!contato.numero || !contato.nome) {
       log(`Pulando contato inválido: ${JSON.stringify(contato)}`);
@@ -124,26 +182,24 @@ async function main() {
       continue;
     }
 
-    // Envia mensagem
+    // Envia
     const resultado = await enviarParaContato(contato);
     if (resultado.success) {
       progresso.enviados.push(contato.numero);
       progresso.ultimoIndex = index;
-      fs.writeFileSync(PROGRESS_FILE, JSON.stringify(progresso, null, 2));
+      try { fs.writeFileSync(PROGRESS_FILE, JSON.stringify(progresso, null, 2)); } catch {}
     }
 
     enviosNesteLote++;
 
-    // Se for o último contato, não espera
     if (index === contatos.length - 1) {
       log("Último contato da lista enviado.");
       break;
     }
 
-    // Pausa curta ou longa
+    // Pausa
     let msPausa;
     let tipoPausa;
-
     if (enviosNesteLote >= TAMANHO_LOTE) {
       msPausa = getPausaAleatoriaMs(PAUSA_LOTE_MIN_MINUTOS, PAUSA_LOTE_MAX_MINUTOS);
       tipoPausa = `LONGA (lote de ${TAMANHO_LOTE})`;
@@ -153,17 +209,38 @@ async function main() {
       tipoPausa = "curta";
     }
 
-    const minutos = Math.round(msPausa / (60 * 1000));
+    const minutos = Math.round(msPausa / 60000);
     log(`Aguardando ${minutos} minutos (pausa ${tipoPausa})...`);
-    await wait(msPausa);
+
+    // Durante a pausa curta/longa, se virar fora de horário, interrompe espera longa
+    const step = 60 * 1000; // checa a cada 1 min
+    let restante = msPausa;
+    while (restante > 0) {
+      // se saiu da janela, aguarda até reabrir
+      if (!isWithinBusinessHours()) {
+        await waitForBusinessWindow();
+      }
+      const s = Math.min(step, restante);
+      await wait(s);
+      restante -= s;
+    }
   }
 
   log("=== ROTEIRO FINALIZADO ===");
 }
 
+// encerra limpo
 process.on("SIGINT", () => {
   log("Recebido SIGINT (Ctrl+C). Encerrando...");
   process.exit(0);
 });
 
-main();
+// keep-alive Railway (evita “hibernar”)
+const app = express();
+app.get("/", (_req, res) => res.send("whats-prospect ativo"));
+app.listen(process.env.PORT || 3000);
+
+main().catch((e) => {
+  log("Erro fatal no main: " + e.message);
+  process.exit(1);
+});
