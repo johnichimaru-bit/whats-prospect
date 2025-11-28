@@ -1,1138 +1,798 @@
 [
   {
-    "nome": "MARCELA PONTEL GOMES SILVA",
-    "numero": "5531996220832"
+    "nome": "Barbearia Made in Roça",
+    "numero": "5511971866339"
   },
   {
-    "nome": "LEIA DE OLIVEIRA ARAUJO",
-    "numero": "5518996224380"
+    "nome": "Barbearia Dom Papito",
+    "numero": "5511988355138"
   },
   {
-    "nome": "KARINA BARBOSA LOPES",
-    "numero": "5527996246019"
+    "nome": "Barbearia Made in Roça",
+    "numero": "5511949207756"
   },
   {
-    "nome": "SARA ABREU RAMOS",
-    "numero": "5516996251402"
+    "nome": "59 Barbearia",
+    "numero": "5511943614709"
   },
   {
-    "nome": "JOAO VITOR BERNARDO DOS SANTOS",
-    "numero": "5582996251820"
+    "nome": "Barbearia Red Blue",
+    "numero": "5511965708505"
   },
   {
-    "nome": "VITOR HUGO INOCENCIO",
-    "numero": "5565996257372"
+    "nome": "Barbearia Nell Cortes",
+    "numero": "5511992493147"
   },
   {
-    "nome": "ELIELZA GEREMIAS SANTOS",
-    "numero": "5512996263880"
+    "nome": "Holy Barbearia",
+    "numero": "551126693974"
   },
   {
-    "nome": "KARINA DE ANDRADE MIRANDA DUARTE",
-    "numero": "5515996275380"
+    "nome": "Barbearia R1",
+    "numero": "5511969977593"
   },
   {
-    "nome": "TAMARA SILVA MODES",
-    "numero": "5562996284710"
+    "nome": "Barbearia Dock's",
+    "numero": "5511940316675"
   },
   {
-    "nome": "RENATA NAZARE MARTINS",
-    "numero": "5548996296865"
+    "nome": "Barbearia Barber's",
+    "numero": "5511961322099"
   },
   {
-    "nome": "ISAQUE GUEDES SOUZA",
-    "numero": "5583996298902"
+    "nome": "Barbearia Dom Soares",
+    "numero": "5511945028647"
   },
   {
-    "nome": "FERNANDA SOARES DE LIMA",
-    "numero": "5583996304024"
+    "nome": "Brutus barbearia",
+    "numero": "5511946088335"
   },
   {
-    "nome": "MARIA DE FATIMA ACIOLI",
-    "numero": "5547996314779"
+    "nome": "Barbearia Dom Gentil",
+    "numero": "551144681898"
   },
   {
-    "nome": "CAMILA FERRARI BOAVENTURA CORDEIRO DE SOUZA",
-    "numero": "5511996327132"
+    "nome": "Old Classic Barbearia",
+    "numero": "551139697009"
   },
   {
-    "nome": "GABRIEL REBELATTO",
-    "numero": "5554996327987"
+    "nome": "Barbearia Santo André",
+    "numero": "551143160047"
   },
   {
-    "nome": "JOSICLEIDE MARIA FERREIRA",
-    "numero": "5581996330311"
+    "nome": "Barbearia Rodrigues",
+    "numero": "5511974515187"
   },
   {
-    "nome": "LUCAS RIBEIRO DOMINGUES",
-    "numero": "5513996352221"
+    "nome": "BARBEARIA ALEMÃO",
+    "numero": "551143162541"
   },
   {
-    "nome": "VALERIA ALVES FERREIRA BRITO",
-    "numero": "5534996365604"
+    "nome": "Barbearia Queirós",
+    "numero": "551149786452"
   },
   {
-    "nome": "CAROLINA DE MATOS IRINEU FERREIRA",
-    "numero": "5531996378415"
+    "nome": "Barbearia Motirõ I Barbearia Em Santo André",
+    "numero": "5511971642329"
   },
   {
-    "nome": "FRANCINALVA DE SOUZA FERREIRA",
-    "numero": "5584996407756"
+    "nome": "Fade barbearia brasileira",
+    "numero": "5511947205901"
   },
   {
-    "nome": "ELISEU ALVES SILVA DE OLIVEIRA",
-    "numero": "5518996417633"
+    "nome": "Matheu’s Barbershop",
+    "numero": "5511996681789"
   },
   {
-    "nome": "MAYARA BARROS VENCESLAU",
-    "numero": "5518996421883"
+    "nome": "Barbearia Rio Branco",
+    "numero": "5511985009822"
   },
   {
-    "nome": "KELLY CRISTINA CASSERES MARTINS",
-    "numero": "5521996423042"
+    "nome": "Barbearia Aliança",
+    "numero": "5511951797497"
   },
   {
-    "nome": "ANA LUCIA DOS SANTOS",
-    "numero": "5565996435370"
+    "nome": "Daniel's Barbershop",
+    "numero": "5511974139206"
   },
   {
-    "nome": "VANESSA GODINHO BATISTA ZILLI",
-    "numero": "5548996440270"
+    "nome": "Barbearia Mauá",
+    "numero": "5511971030551"
   },
   {
-    "nome": "SUELI REGINA RODRIGUES DALL AGNOL",
-    "numero": "5554996443420"
+    "nome": "Barbearia Jozza Moreira",
+    "numero": "5511973880614"
   },
   {
-    "nome": "LINDOMAR GUEDES CARNEIRO MARTINS",
-    "numero": "5581996457310"
+    "nome": "Carlos’s Barbershop",
+    "numero": "5511951094547"
   },
   {
-    "nome": "PAULO ANDRE SANTOS DA ROCHA",
-    "numero": "5562996460634"
+    "nome": "Barbearia PH",
+    "numero": "5511947210465"
   },
   {
-    "nome": "CAROLINE DE SOUSA CAETANO",
-    "numero": "5543996469271"
+    "nome": "Barbearia Wil Melo",
+    "numero": "5511987131925"
   },
   {
-    "nome": "CINTIA FERNANDA GALOIS NUNES",
-    "numero": "5521996471386"
+    "nome": "Spider Barber Shop",
+    "numero": "5511947881989"
   },
   {
-    "nome": "SANDRO JUNIOR CARDOSO",
-    "numero": "5566996505728"
+    "nome": "Barbearia 2 Irmãos",
+    "numero": "551148251088"
   },
   {
-    "nome": "ANA KILVIA DAS CHAGAS",
-    "numero": "5585996571206"
+    "nome": "Barbearia Sempre Jovem",
+    "numero": "5511999612741"
   },
   {
-    "nome": "LUCIANA MARTINS DOS SANTOS",
-    "numero": "5518996574355"
+    "nome": "Barbearia M.V",
+    "numero": "5511995106892"
   },
   {
-    "nome": "SILVANA GONCALVES DE BARROS",
-    "numero": "5582996594348"
+    "nome": "Barbearia Freitas",
+    "numero": "5511977094720"
   },
   {
-    "nome": "BARBARA FORZZA ROLDI",
-    "numero": "5527996619921"
+    "nome": "Barbearia Johnny’s Barber Club",
+    "numero": "5511949266957"
   },
   {
-    "nome": "MARIZANI VIEIRA DA SILVA",
-    "numero": "5565996642199"
+    "nome": "Barbearia Red Blue",
+    "numero": "5511949225070"
   },
   {
-    "nome": "DANIEL DAVID DE SOUZA GURGEL",
-    "numero": "5584996650886"
+    "nome": "Barbearia Dom Zelote",
+    "numero": "5511912082602"
   },
   {
-    "nome": "JAQUELINE ODETE PALMAS FEITOSA",
-    "numero": "5517996737623"
+    "nome": "Barbearia Made in Roça",
+    "numero": "5511980247513"
   },
   {
-    "nome": "PATRICIA CRISTINA FONSECA",
-    "numero": "5543996753311"
+    "nome": "Barbearia Valhalla",
+    "numero": "5511968311599"
   },
   {
-    "nome": "LUCIANA NASCIMENTO DA SILVA",
-    "numero": "5521996767115"
+    "nome": "Barbearia Papai Smurf",
+    "numero": "551127596641"
   },
   {
-    "nome": "MARIA EDUARDA LOPES DE CAMPOS",
-    "numero": "5555996800912"
+    "nome": "Barbearia Seu Jota",
+    "numero": "5511964551343"
   },
   {
-    "nome": "VANIA DE CARVALHO",
-    "numero": "5512996820227"
+    "nome": "Resenha Barbearia",
+    "numero": "5511976654748"
   },
   {
-    "nome": "DANIELA CRISTINA SILVA DE OLIVEIRA",
-    "numero": "5514996838098"
+    "nome": "BARBEARIA THE HOUSE No.",
+    "numero": "5511930021287"
   },
   {
-    "nome": "VALDAIR CANEGOSKI DOS SANTOS",
-    "numero": "5548996846543"
+    "nome": "Barbearia Cabeça Barbershop",
+    "numero": "5511942042432"
   },
   {
-    "nome": "GLEITON LUSTOSA BATISTA",
-    "numero": "5561996861275"
+    "nome": "TS Barbearia",
+    "numero": "551143083899"
   },
   {
-    "nome": "PATRINY DE CASSIA MACIEL",
-    "numero": "5551996876423"
+    "nome": "Barbearia Guava",
+    "numero": "5511913989895"
   },
   {
-    "nome": "LENIR MARIA DA SILVA DE FREITAS",
-    "numero": "5521996880578"
+    "nome": "Senhor Bernô Barbearia Clube",
+    "numero": "5511948983052"
   },
   {
-    "nome": "SUELI RODRIGUES FERREIRA",
-    "numero": "5581996881494"
+    "nome": "Barbearia do zá",
+    "numero": "5511965675798"
   },
   {
-    "nome": "WILLYAN LIMA INOCENCIO",
-    "numero": "5513996901338"
+    "nome": "Bella Barba Barbearia",
+    "numero": "551123565818"
   },
   {
-    "nome": "CLEUTON CEZAR RAASCH FARIAS JUNIOR",
-    "numero": "5566996903562"
+    "nome": "Bella Barba Barbearia",
+    "numero": "551149303575"
   },
   {
-    "nome": "LARISSA BRAGA",
-    "numero": "5515996909887"
+    "nome": "Barbearia Jamaica",
+    "numero": "5511988524810"
   },
   {
-    "nome": "JOSE HERIBERTO RODRIGUES DA PENHA",
-    "numero": "5584996944641"
+    "nome": "Beatus Barbearia",
+    "numero": "5511959389063"
   },
   {
-    "nome": "NALBERT DA SILVA",
-    "numero": "5566996977144"
+    "nome": "Barbearia Central S.A",
+    "numero": "5511914833308"
   },
   {
-    "nome": "LUIZ EDUARDO ERMENEGILDO",
-    "numero": "5513996979335"
+    "nome": "Barbearia MPSEspaço W",
+    "numero": "5511979646510"
   },
   {
-    "nome": "ALICIA ROCHA CASTILHO",
-    "numero": "5544997016098"
+    "nome": "Barbearia JR",
+    "numero": "5511986027883"
   },
   {
-    "nome": "GABRIEL WILLIAN DA MAIA RITZ",
-    "numero": "5554997016902"
+    "nome": "Coiote Barbearia",
+    "numero": "551149916596"
   },
   {
-    "nome": "THIAGO REIS DE JESUS",
-    "numero": "5541997018421"
+    "nome": "Opala's Barbearia",
+    "numero": "5511975738678"
   },
   {
-    "nome": "CARLOS MAGNO DOS SANTOS",
-    "numero": "5512997022746"
+    "nome": "No Talento Barbearia",
+    "numero": "5511978043933"
   },
   {
-    "nome": "DANIELA DE OLIVEIRA SILVA SILVEIRA",
-    "numero": "5535997069309"
+    "nome": "Barbearia Dominic",
+    "numero": "5511960317361"
   },
   {
-    "nome": "MAXSUELLEN JORGE RIBEIRO",
-    "numero": "5527997073991"
+    "nome": "Barbearia Toop Barba",
+    "numero": "5511984528914"
   },
   {
-    "nome": "BRUNO GUILHERME SILVA DE BRITO",
-    "numero": "5581997100688"
+    "nome": "VT Barbearia",
+    "numero": "5511999506339"
   },
   {
-    "nome": "LUCIANA APARECIDA DE MORAES",
-    "numero": "5519997127138"
+    "nome": "JEAN BARBER SHOP",
+    "numero": "5511974797723"
   },
   {
-    "nome": "SIMONE ROSA DOS SANTOS",
-    "numero": "5514997131347"
+    "nome": "Barbearia São Bernardo",
+    "numero": "5511994237774"
   },
   {
-    "nome": "ELIAS VIEIRA DA SILVA",
-    "numero": "5511997165985"
+    "nome": "EL BARBEARIA",
+    "numero": "5511985372042"
   },
   {
-    "nome": "KAUAN DE MORAES",
-    "numero": "5547997189704"
+    "nome": "O Gomes Barbearia",
+    "numero": "5511952999232"
   },
   {
-    "nome": "LUCILENE GOMES DE ALCANTARA DUARTE",
-    "numero": "5588997233107"
+    "nome": "Brabo Barbearia",
+    "numero": "5511999999217"
   },
   {
-    "nome": "GABRIELA ROSA COSTA",
-    "numero": "5527997257492"
+    "nome": "Barbearia Império Lounge",
+    "numero": "5511947548398"
   },
   {
-    "nome": "PATRICIA APARECIDA FERREIRA ANDRADE",
-    "numero": "5535997259891"
+    "nome": "Barbearia Don Carvalho",
+    "numero": "5511942271012"
   },
   {
-    "nome": "ANGRA CRISTIANE DOS SANTOS ALVES",
-    "numero": "5514997279022"
+    "nome": "Barbearia do Zé",
+    "numero": "551140662541"
   },
   {
-    "nome": "TATIANA SOUTO PREIGSCHADT",
-    "numero": "5555997327571"
+    "nome": "Dom Emílio Barbearia",
+    "numero": "551144365575"
   },
   {
-    "nome": "LARISSA CRISTINA BONIFACIO GUIMARAES",
-    "numero": "5513997362830"
+    "nome": "Barbearia Kairos",
+    "numero": "5511982095539"
   },
   {
-    "nome": "MARIA DE FATIMA MENDES BATISTA",
-    "numero": "5521997471991"
+    "nome": "Barbearia Los Mandamientos",
+    "numero": "551123113021"
   },
   {
-    "nome": "LIDIANY BRAZ E SILVA",
-    "numero": "5585997497815"
+    "nome": "Barbearia Espaço Visual",
+    "numero": "5511998770143"
   },
   {
-    "nome": "SILVANIA DA SILVA BRUM",
-    "numero": "5551997507910"
+    "nome": "Sula Barber Shop",
+    "numero": "5511997105897"
   },
   {
-    "nome": "SANDRA APARECIDA RIBEIRO DE SOUZA",
-    "numero": "5544997561175"
+    "nome": "Barbearia Kleber Design",
+    "numero": "5511952486553"
   },
   {
-    "nome": "DIOGO CARLOS ZOLIANI CORREIA",
-    "numero": "5514997570388"
+    "nome": "Barbearia noka",
+    "numero": "5511943727059"
   },
   {
-    "nome": "SAMUEL FERREIRA LIMA",
-    "numero": "5527997582968"
+    "nome": "Barbearia StudioE",
+    "numero": "5511988944011"
   },
   {
-    "nome": "LUIS FILIPE TEIXEIRA DE SOUSA",
-    "numero": "5513997588719"
+    "nome": "JL Barbearia",
+    "numero": "5511946638560"
   },
   {
-    "nome": "SHEISA PACHECO DA SILVA",
-    "numero": "5547997639585"
+    "nome": "Barbearia do Fon",
+    "numero": "5511997165147"
   },
   {
-    "nome": "GISELE ANTUNES DA ROSA",
-    "numero": "5544997660128"
+    "nome": "Barbearia Zero9",
+    "numero": "5511967674898"
   },
   {
-    "nome": "BRENDO AURELIO VITALINO DOS SANTOS",
-    "numero": "5516997675192"
+    "nome": "Barbearia Belo",
+    "numero": "5511942981468"
   },
   {
-    "nome": "MAICK GABRIEL DA SILVA VIEIRA",
-    "numero": "5515997705784"
+    "nome": "Barbearia Leal",
+    "numero": "5511978605839"
   },
   {
-    "nome": "CRISTIANE REGINA PIRAS ANGELICO",
-    "numero": "5514997770222"
+    "nome": "Barbearia 63",
+    "numero": "5511956304956"
   },
   {
-    "nome": "MARCIA REGINIA DE OLIVEIRA",
-    "numero": "5527997774824"
+    "nome": "O Barbado",
+    "numero": "5511957803361"
   },
   {
-    "nome": "SIDNEI DA COSTA",
-    "numero": "5518997778415"
+    "nome": "Barbearia do Leo",
+    "numero": "5511945258702"
   },
   {
-    "nome": "SARA DE AGUIAR FREITAS",
-    "numero": "5515997790848"
+    "nome": "12 Cartolas Barbearia",
+    "numero": "5511987915639"
   },
   {
-    "nome": "SAMARA ELIANA FREIRE",
-    "numero": "5516997833794"
+    "nome": "Barbearia Santa Skina",
+    "numero": "5511977539505"
   },
   {
-    "nome": "CARLA JOSIANE WINGERT",
-    "numero": "5551997869817"
+    "nome": "Maminiuski Barbearia",
+    "numero": "5511992181048"
   },
   {
-    "nome": "VIVIAN DA SILVA MOREIRA",
-    "numero": "5522997914069"
+    "nome": "Barbearia do Ricky",
+    "numero": "5511941068115"
   },
   {
-    "nome": "VALERIA RODRIGUES",
-    "numero": "5534997935626"
+    "nome": "Oliver Barbearia",
+    "numero": "5511984271804"
   },
   {
-    "nome": "LUCIENE FONTOURA DE FREITAS",
-    "numero": "5517997939742"
+    "nome": "Top Barbearia e Estética",
+    "numero": "5511940370200"
   },
   {
-    "nome": "ALLAN CRISTHIAN DA CRUZ OLIVEIRA",
-    "numero": "5515997941576"
+    "nome": "Barbearia Dom Guerreiro",
+    "numero": "5511959494834"
   },
   {
-    "nome": "LUIS DE PAULA MENDONCA NETO",
-    "numero": "5567998001172"
+    "nome": "Barbearia no ABC",
+    "numero": "5513981009654"
   },
   {
-    "nome": "MAYCOL MARTINS MORENO",
-    "numero": "5562998025275"
+    "nome": "Barbearia O Motta",
+    "numero": "5511982904687"
   },
   {
-    "nome": "KLYSMAN EDUARDO MONTALVAO DE ALMEIDA",
-    "numero": "5561998042811"
+    "nome": "barbearia_do_gordinhoooo",
+    "numero": "5511958881516"
   },
   {
-    "nome": "LUIZA HELENA GUIMARAES",
-    "numero": "5537998070847"
+    "nome": "Barbearia Navalha Refinada",
+    "numero": "5511968387806"
   },
   {
-    "nome": "VALDILENE SILVA",
-    "numero": "5579998078856"
+    "nome": "Alisson Barbearia",
+    "numero": "5511984394323"
   },
   {
-    "nome": "REGIANE DO ROCIO MONTEIRO DOS SANTOS",
-    "numero": "5542998091308"
+    "nome": "Barbearia Bié",
+    "numero": "5511999846945"
   },
   {
-    "nome": "ERICK JOHNY VIEIRA DE OLIVEIRA",
-    "numero": "5565998102774"
+    "nome": "Barbearia Bruno Siqueira",
+    "numero": "5511964251468"
   },
   {
-    "nome": "ELISABETE LUCIO E SILVA",
-    "numero": "5524998110964"
+    "nome": "Alex barbearia",
+    "numero": "5511986526235"
   },
   {
-    "nome": "BRUNA TERRA DE ARAUJO",
-    "numero": "5522998122863"
+    "nome": "Elviss.Barbearia",
+    "numero": "5511960791785"
   },
   {
-    "nome": "THUANNY RACHADEL",
-    "numero": "5548998145914"
+    "nome": "Barber Shop Marlon Sérgio",
+    "numero": "5511950776976"
   },
   {
-    "nome": "PATRICIA TULER DE ALMEIDA DAUDT",
-    "numero": "5522998154107"
+    "nome": "Barbearia Chris Cortes",
+    "numero": "5511954768851"
   },
   {
-    "nome": "MARIA BARBOSA DA CRUZ MENESES",
-    "numero": "5579998167096"
+    "nome": "Barbearia Rico Ogawa",
+    "numero": "5511988282840"
   },
   {
-    "nome": "SAULO VILELA BATISTA DE SOUZA",
-    "numero": "5537998208348"
+    "nome": "Juba Barbearia",
+    "numero": "5511912985247"
   },
   {
-    "nome": "LUZIA SANTOS DA SILVA",
-    "numero": "5545998215192"
+    "nome": "Allan Jonathans Barbearia",
+    "numero": "5511998666636"
   },
   {
-    "nome": "VIVIANE CRISTINA VAZ",
-    "numero": "5541998231837"
+    "nome": "Barbearia Sr. Saul",
+    "numero": "5511950501415"
   },
   {
-    "nome": "RENATA DE ALMEIDA CORREA",
-    "numero": "5535998255478"
+    "nome": "Espaço W Barbearia Itamarati I Barbearia em Santo André",
+    "numero": "5511960164302"
   },
   {
-    "nome": "NICOLI DE FREITAS",
-    "numero": "5545998257217"
+    "nome": "Barbearia Jhow soares",
+    "numero": "5511951012550"
   },
   {
-    "nome": "ARZELINA DE LIMA MARCONDES",
-    "numero": "5541998282851"
+    "nome": "Célio's Barber Shop",
+    "numero": "5511982895023"
   },
   {
-    "nome": "MARIA APARECIDA MOROSINI DE OLIVEIRA",
-    "numero": "5527998305990"
+    "nome": "Jarbasbarbearia",
+    "numero": "5511983205148"
   },
   {
-    "nome": "JESSICA ALVES BOMFIM DOS SANTOS",
-    "numero": "5577998320537"
+    "nome": "Barbearia R.S",
+    "numero": "5511957853054"
   },
   {
-    "nome": "JULIANO DA SILVA DO NASCIMENTO",
-    "numero": "5573998350897"
+    "nome": "Tokyo Barbearia",
+    "numero": "5511962438645"
   },
   {
-    "nome": "MONICA VIEIRA DA ROCHA",
-    "numero": "5511998357294"
+    "nome": "Barbearia Buxexa",
+    "numero": "5511971219213"
   },
   {
-    "nome": "ANA MARIA CALDEIRA DA SILVA",
-    "numero": "5533998375574"
+    "nome": "Barbearia Don Guillermo",
+    "numero": "5511941004082"
   },
   {
-    "nome": "RIAN FERREIRA DE SOUZA",
-    "numero": "5582998382485"
+    "nome": "Barbearia Do Parangolé",
+    "numero": "5511985397974"
   },
   {
-    "nome": "JESSICA LIMA DE OLIVEIRA BARBOZA",
-    "numero": "5542998422245"
+    "nome": "Barbearia Bigodin",
+    "numero": "5511986495037"
   },
   {
-    "nome": "SIDNEY RENATO DA SILVA LEITE",
-    "numero": "5581998424732"
+    "nome": "Barbearia Baruch",
+    "numero": "5511944356000"
   },
   {
-    "nome": "VERA LUCIA DA CONCEICAO DIAS",
-    "numero": "5527998447643"
+    "nome": "Barbearia Jack Daniels",
+    "numero": "5511971370421"
   },
   {
-    "nome": "HILTON SILVEIRA NETO",
-    "numero": "5548998449016"
+    "nome": "Barbearia Lazar Segal",
+    "numero": "5511973910056"
   },
   {
-    "nome": "THALES FELIPE MILITAO",
-    "numero": "5541998462202"
+    "nome": "Barbearia Expresso 10",
+    "numero": "5561985823051"
   },
   {
-    "nome": "RITA DE CASSIA PEDROLLI",
-    "numero": "5527998466805"
+    "nome": "23 Barbearia",
+    "numero": "551144621598"
   },
   {
-    "nome": "IRACEMA LEONARDO DA SILVA",
-    "numero": "5527998477437"
+    "nome": "3:16 Barbearia",
+    "numero": "5511930715574"
   },
   {
-    "nome": "DOUGLAS CARDOSO VIEGAS",
-    "numero": "5551998495254"
+    "nome": "Barbearia 3161",
+    "numero": "5511997555871"
   },
   {
-    "nome": "TAIS APARECIDA VIEIRA",
-    "numero": "5541998496178"
+    "nome": "Barbearia Michael Almeida",
+    "numero": "5511966709195"
   },
   {
-    "nome": "DAIANA APARECIDA DE ALMEIDA SILVA",
-    "numero": "5524998512096"
+    "nome": "Barbearia Los Pibes",
+    "numero": "5511967193752"
   },
   {
-    "nome": "ANA CAROLINE ARAUJO SILVA BARBOSA",
-    "numero": "5522998518718"
+    "nome": "Barbearia Volkolder",
+    "numero": "5511930030221"
   },
   {
-    "nome": "HELENA FARIAS DE SOUZA",
-    "numero": "5561998523938"
+    "nome": "Refúgio do Nobre Barbearia",
+    "numero": "5511910731310"
   },
   {
-    "nome": "TANIA MARA SILVA DE OLIVEIRA",
-    "numero": "5527998548537"
+    "nome": "Barbearia Bigode de Ouro",
+    "numero": "551123565180"
   },
   {
-    "nome": "MARCOS VINICIUS DEGANUTTI",
-    "numero": "5544998572440"
+    "nome": "Barbearia Bendita Navalha",
+    "numero": "551123256125"
   },
   {
-    "nome": "LILIA DO NASCIMENTO SOUZA",
-    "numero": "5561998601157"
+    "nome": "Barbearia ED Silva",
+    "numero": "5511941419333"
   },
   {
-    "nome": "SIMONI ARAUJO DA SILVA",
-    "numero": "5522998606020"
+    "nome": "Barbearia Jaé Art Black",
+    "numero": "5511989560101"
   },
   {
-    "nome": "MAXUEL SANTANA PACHECO",
-    "numero": "5579998621301"
+    "nome": "Barbearia Campeã",
+    "numero": "551142245293"
   },
   {
-    "nome": "MARIA NAIDE GADELHA DOS REIS",
-    "numero": "5585998630795"
+    "nome": "SK barbearia",
+    "numero": "5511951783610"
   },
   {
-    "nome": "TAYNARA DIAS DE SOUZA",
-    "numero": "5524998707347"
+    "nome": "Barbearia D'arc",
+    "numero": "5511961463600"
   },
   {
-    "nome": "MELISSIA GUIMARAES DOS SANTOS",
-    "numero": "5543998716104"
+    "nome": "Shantt Barbearia",
+    "numero": "5511960791785"
   },
   {
-    "nome": "SAMYRA LILIAN OLIVEIRA SILVA",
-    "numero": "5544998716409"
+    "nome": "Barbearia Santa Skina",
+    "numero": "5511940431525"
   },
   {
-    "nome": "FABIOLA ROGERIA GERBASI DE FREITAS",
-    "numero": "5514998717402"
+    "nome": "Barbearia Emanuel",
+    "numero": "5511933551661"
   },
   {
-    "nome": "KISSILLA BARROS SILVA LOPES",
-    "numero": "5522998745533"
+    "nome": "Barbearia Dom Jóra",
+    "numero": "5511992017808"
   },
   {
-    "nome": "ELIANE VENTURA DE ALMEIDA",
-    "numero": "5524998751873"
+    "nome": "Bunker Barbearia",
+    "numero": "551144371398"
   },
   {
-    "nome": "WESLLEY DE SOUSA BORBA",
-    "numero": "5511998755810"
+    "nome": "Brutus Barbearia",
+    "numero": "551123115681"
   },
   {
-    "nome": "ROSA TERESA COSTA DE FREITAS",
-    "numero": "5581998759644"
+    "nome": "Barbearia Carvalho",
+    "numero": "5511997073875"
   },
   {
-    "nome": "JOHNE WILIANS PRESTES PIRES",
-    "numero": "5541998801262"
+    "nome": "Drive Barbearia",
+    "numero": "551141037698"
   },
   {
-    "nome": "JOSINETE RABELO PEREIRA",
-    "numero": "5522998809558"
+    "nome": "Barbearia JK",
+    "numero": "5511937632345"
   },
   {
-    "nome": "ROSEANE LAWRENCE TELES DA SILVA ANDRADE",
-    "numero": "5524998820084"
+    "nome": "Elite Barbearia",
+    "numero": "5511943080611"
   },
   {
-    "nome": "THALIA LORENA BATISTA DOS SANTOS",
-    "numero": "5544998835629"
+    "nome": "Seu Ortiz Barbearia",
+    "numero": "551143190419"
   },
   {
-    "nome": "MARIANA SILVA CORREIA DOS SANTOS",
-    "numero": "5511998852989"
+    "nome": "Comics Barbearia",
+    "numero": "5511994798825"
   },
   {
-    "nome": "JHULIANY SIZINANDO DOS SANTOS",
-    "numero": "5541998863918"
+    "nome": "Barbearia Gordocort's",
+    "numero": "5511949152851"
   },
   {
-    "nome": "AURENI IZIDORO BERNARDO VIEIRA",
-    "numero": "5527998870391"
+    "nome": "Trezentos Barber Shop",
+    "numero": "5511981203483"
   },
   {
-    "nome": "ANA CAROLINA GOMES PACITO",
-    "numero": "5567998879735"
+    "nome": "23 Barbearia",
+    "numero": "551144276282"
   },
   {
-    "nome": "BRENDA DIAS FERREIRA",
-    "numero": "5527998954629"
+    "nome": "23 Barbearia",
+    "numero": "551123794814"
   },
   {
-    "nome": "LUCAS EDUARDO SILVA PEREIRA",
-    "numero": "5534998961476"
+    "nome": "Barbearia Hermanos",
+    "numero": "551131642119"
   },
   {
-    "nome": "SEDILENE ZANESCO PESAVENTO",
-    "numero": "5549999008531"
+    "nome": "Buchecha Barbearia",
+    "numero": "5511998286465"
   },
   {
-    "nome": "GLORIA MARIA DE MOURA MACEDO",
-    "numero": "5577999026664"
+    "nome": "O Marujo Barbearia",
+    "numero": "5511945475353"
   },
   {
-    "nome": "EVA TIBURCIO MACHADO",
-    "numero": "5541999026848"
+    "nome": "Sky Barbearia",
+    "numero": "5511992681721"
   },
   {
-    "nome": "MARIA ALINE FIEL DIAS",
-    "numero": "5579999041700"
+    "nome": "Casa Stark Barbearia",
+    "numero": "5511996083649"
   },
   {
-    "nome": "MARIA EMILIA PADILHA PEREIRA",
-    "numero": "5545999051187"
+    "nome": "Barbearia Don Guillermo",
+    "numero": "5511944404861"
   },
   {
-    "nome": "SUELEN CRISTINA APARECIDA DO NASCIMENTO",
-    "numero": "5532999062832"
+    "nome": "Barbearia geração 1996",
+    "numero": "5511912579077"
   },
   {
-    "nome": "CRISTIANE DOS SANTOS DA SILVA",
-    "numero": "5551999084890"
+    "nome": "Barbearia Figueiras",
+    "numero": "551143195621"
   },
   {
-    "nome": "ANA PAULA APARECIDA COSTA",
-    "numero": "5533999108838"
+    "nome": "JK Barbearia",
+    "numero": "5511943023274"
   },
   {
-    "nome": "GABRIELA SARAH DOS SANTOS BERNARDO",
-    "numero": "5531999110910"
+    "nome": "KRAUSS Barbearia",
+    "numero": "5511981322927"
   },
   {
-    "nome": "MARIA REGINA PEREIRA DA SILVA",
-    "numero": "5588999111211"
+    "nome": "Barbearia Zapata",
+    "numero": "551144274082"
   },
   {
-    "nome": "DANIEL CARDOSO DA SILVA",
-    "numero": "5592999117220"
+    "nome": "Barbearia Contessoto",
+    "numero": "551123744187"
   },
   {
-    "nome": "KELI ADRIANE BRESSAN",
-    "numero": "5546999122900"
+    "nome": "Barbearia do Zé",
+    "numero": "5511967432965"
   },
   {
-    "nome": "SUELEM KAROLINA SCHNEIDER KREUSCH",
-    "numero": "5548999123616"
+    "nome": "Barbearia Carvalho",
+    "numero": "55984584299"
   },
   {
-    "nome": "LUCIANA SANTOS MENDES",
-    "numero": "5538999136906"
+    "nome": "Barbearia Dom Vanin",
+    "numero": "5511940245211"
   },
   {
-    "nome": "FLAVIA FARIA LOPES",
-    "numero": "5532999147174"
+    "nome": "23 Barbearia",
+    "numero": "5511978617613"
   },
   {
-    "nome": "ROSILENE VIANA TAVARES AMORIM",
-    "numero": "5532999151003"
+    "nome": "Barbearia Beard Station",
+    "numero": "5511943914885"
   },
   {
-    "nome": "CLACIENI DO CARMO BIAZARTE",
-    "numero": "5528999158269"
+    "nome": "BARBEARIA DO KEVAO",
+    "numero": "5511977359685"
   },
   {
-    "nome": "GIOVANA CORTEZ SOTERO",
-    "numero": "5561999169832"
+    "nome": "Barbearia Cortezzy",
+    "numero": "551126690052"
   },
   {
-    "nome": "CAROLINA POPPI RIBEIRO",
-    "numero": "5544999173007"
+    "nome": "Barbearia Don Juan",
+    "numero": "551125340205"
   },
   {
-    "nome": "LUCIANA SOUZA VALENTIM SILVA",
-    "numero": "5522999174514"
+    "nome": "23 Barbearia",
+    "numero": "551149766615"
   },
   {
-    "nome": "SCHEILA MADEIRA BELGROWICZ",
-    "numero": "5542999191898"
+    "nome": "Seu Figas Barbearia",
+    "numero": "551149907272"
   },
   {
-    "nome": "ROMINIGUE PINHEIRO DA SILVA",
-    "numero": "5579999199073"
+    "nome": "BARBEARIA ALINE BARBER (Studio)",
+    "numero": "5511983937598"
   },
   {
-    "nome": "VILMA FERREIRA RIBEIRO",
-    "numero": "5566999208747"
+    "nome": "BARBEARIA E CURSOS IMPÉRIO",
+    "numero": "5511967682677"
   },
   {
-    "nome": "MAXWEL FERNANDES RODOLFO",
-    "numero": "5548999211073"
+    "nome": "BARBEARIA VINTAGE",
+    "numero": "551123813200"
   },
   {
-    "nome": "GABRILENE MARTINS DE GOIS E SILVA",
-    "numero": "5584999215342"
+    "nome": "Nostra barbearia",
+    "numero": "5511993478729"
   },
   {
-    "nome": "LUCIANA VALERIA DA SILVA ARAUJO",
-    "numero": "5579999216695"
+    "nome": "Barbearia Queiroz",
+    "numero": "5511981198961"
   },
   {
-    "nome": "ELIZANGELA AQUINO COUTINHO MARTINS",
-    "numero": "5568999218819"
+    "nome": "Barbearia Roben",
+    "numero": "551145455610"
   },
   {
-    "nome": "ANDREI APARECIDO DA CUNHA GONCALVES FERREIRA",
-    "numero": "5544999226435"
+    "nome": "Brond’s Barbearia",
+    "numero": "5511975437842"
   },
   {
-    "nome": "JADY JANAINE FERREIRA PAULINO",
-    "numero": "5564999229582"
+    "nome": "Barbearia Débora Fuentes",
+    "numero": "5511954904993"
   },
   {
-    "nome": "ELIZANGELA PAROLIN ANTONELI",
-    "numero": "5542999239571"
+    "nome": "Souza Barbershop",
+    "numero": "5511917289118"
   },
   {
-    "nome": "MILA GOMES PAIVA",
-    "numero": "5528999252551"
+    "nome": "Barbearia Barba Longa",
+    "numero": "5511959001331"
   },
   {
-    "nome": "KEITI CRISTINA DE FRANCA",
-    "numero": "5541999255844"
+    "nome": "Barbearia Evoluwill",
+    "numero": "5511997171132"
   },
   {
-    "nome": "JACKSON DOS SANTOS",
-    "numero": "5579999262280"
+    "nome": "Street Barbers",
+    "numero": "5511951149137"
   },
   {
-    "nome": "GUILHERME DA SILVA OLIVEIRA",
-    "numero": "5562999264582"
+    "nome": "Barbearia do Ronny",
+    "numero": "5511977528428"
   },
   {
-    "nome": "JOAO VICTOR DUARTE GALDINO",
-    "numero": "5548999266406"
+    "nome": "Barbearia Dupai",
+    "numero": "5511982883280"
   },
   {
-    "nome": "CARLOS FABIAN CARDOZO DE FREITAS HAHN",
-    "numero": "5545999270798"
+    "nome": "Barbearia da Fada",
+    "numero": "5511977363411"
   },
   {
-    "nome": "ALAN NASCIMENTO DE SOUSA",
-    "numero": "5561999274356"
+    "nome": "Barbearia Colonial",
+    "numero": "551149732522"
   },
   {
-    "nome": "FABIANA SANTOS LIMA",
-    "numero": "5561999278966"
+    "nome": "Barbearia Manccini",
+    "numero": "5511966352746"
   },
   {
-    "nome": "MANOELITA DOS SANTOS PIRES",
-    "numero": "5562999279233"
+    "nome": "Woodsman Barbearia",
+    "numero": "5511958556816"
   },
   {
-    "nome": "WEMERSON LIMA VARGAS",
-    "numero": "5562999279867"
+    "nome": "Barbearia Midgard",
+    "numero": "551143181644"
   },
   {
-    "nome": "EVELLIN DA SILVA CALISTO",
-    "numero": "5524999285258"
+    "nome": "Barbearia Capuava",
+    "numero": "5511953733704"
   },
   {
-    "nome": "REINALDA DOS SANTOS RIBAS",
-    "numero": "5577999289623"
+    "nome": "Barbearia do Carlão",
+    "numero": "5511948181041"
   },
   {
-    "nome": "NATALIA FERRAREZ SINGULANI",
-    "numero": "5532999292133"
+    "nome": "Barbearia Carvalho",
+    "numero": "5511955692223"
   },
   {
-    "nome": "RAIMUNDA MARIA DA CONCEICAO SILVA",
-    "numero": "5511999298780"
+    "nome": "Barbearia Slim",
+    "numero": "551123110068"
   },
   {
-    "nome": "ANGELICA DE SOUSA SOARES FERNANDES",
-    "numero": "5532999300980"
+    "nome": "Barbearia Colonial",
+    "numero": "551144320991"
   },
   {
-    "nome": "ADRIANA DA SILVA CUNHA",
-    "numero": "5524999306023"
+    "nome": "mr.r.barbearia",
+    "numero": "5511919218573"
   },
   {
-    "nome": "SIDEMAR DOS SANTOS",
-    "numero": "5543999313186"
-  },
-  {
-    "nome": "JOAO PAULO DE OLIVEIRA",
-    "numero": "5543999327126"
-  },
-  {
-    "nome": "ELAINE GOMES DE OLIVEIRA",
-    "numero": "5543999337375"
-  },
-  {
-    "nome": "KETLY MARTINS DA SILVA CARI",
-    "numero": "5547999350336"
-  },
-  {
-    "nome": "LARISSA ALVES DA SILVA",
-    "numero": "5567999350719"
-  },
-  {
-    "nome": "MIRELLA INACIO RODRIGUES",
-    "numero": "5562999352237"
-  },
-  {
-    "nome": "GABRIEL SILVA DE MORAIS",
-    "numero": "5538999354695"
-  },
-  {
-    "nome": "JANETE DE JESUS DOS PASSOS OLIVEIRA",
-    "numero": "5542999361440"
-  },
-  {
-    "nome": "SUSANA DILDA KURTZ",
-    "numero": "5554999361630"
-  },
-  {
-    "nome": "JOAO SANTOS AMARAL",
-    "numero": "5588999365784"
-  },
-  {
-    "nome": "JOAO MARIA GONCALVES",
-    "numero": "5542999365795"
-  },
-  {
-    "nome": "SUELLEN KARINE FERNANDES DA COSTA OLIVEIRA",
-    "numero": "5538999367601"
-  },
-  {
-    "nome": "JOELINA DA COSTA TRINDADE",
-    "numero": "5589999368439"
-  },
-  {
-    "nome": "CLAUDIA ROSANA SILVA CASTRO",
-    "numero": "5522999373113"
-  },
-  {
-    "nome": "GUSTAVO BARCELLOS PEREIRA",
-    "numero": "5521999390108"
-  },
-  {
-    "nome": "LAYON SOUZA LIMA",
-    "numero": "5528999417214"
-  },
-  {
-    "nome": "GISLAINE FERNANDES BALDUINO",
-    "numero": "5548999418451"
-  },
-  {
-    "nome": "MARLANA CRISTINA PEREIRA DE PROENCA",
-    "numero": "5542999434326"
-  },
-  {
-    "nome": "WELLINTON HUGO TORRACA HELD",
-    "numero": "5567999440056"
-  },
-  {
-    "nome": "KESSYA DOS SANTOS BRILHANTE",
-    "numero": "5566999442857"
-  },
-  {
-    "nome": "FRANCIELE BENKENDORF",
-    "numero": "5547999454093"
-  },
-  {
-    "nome": "RENATA DUARTE GONDIM",
-    "numero": "5537999462112"
-  },
-  {
-    "nome": "LUIZ ROGERIO E SILVA VIANA",
-    "numero": "5575999467147"
-  },
-  {
-    "nome": "MARIELE TOMASI DA SILVA CARDOSO",
-    "numero": "5545999471620"
-  },
-  {
-    "nome": "FABIA CRISTIANE SANTOS MOURA",
-    "numero": "5566999518144"
-  },
-  {
-    "nome": "ANTONIA IVAN CAMPELO AMADOR",
-    "numero": "5586999521762"
-  },
-  {
-    "nome": "MARCOS NOGUEIRA MENDES",
-    "numero": "5534999522798"
-  },
-  {
-    "nome": "MARIA ELIANE DE SOUZA COSTA",
-    "numero": "5583999523672"
-  },
-  {
-    "nome": "FERNANDA REGINA BOLDRINI",
-    "numero": "5543999525423"
-  },
-  {
-    "nome": "LUDMILLA ALVES DE OLIVEIRA",
-    "numero": "5562999557772"
-  },
-  {
-    "nome": "RAIZA CASTRO TAVARES",
-    "numero": "5522999573758"
-  },
-  {
-    "nome": "MAGNA SILVA DOS SANTOS",
-    "numero": "5534999575386"
-  },
-  {
-    "nome": "VALTENCIR FERREIRA BRAGA",
-    "numero": "5532999592433"
-  },
-  {
-    "nome": "BRUNO ESCUDERO DE OLIVEIRA",
-    "numero": "5543999593609"
-  },
-  {
-    "nome": "CAUA ALEX BORGES PINTO",
-    "numero": "5551999596844"
-  },
-  {
-    "nome": "LUIZ EZEQUIEL SIQUEIRA",
-    "numero": "5531999603641"
-  },
-  {
-    "nome": "ANA CILENE DE MOURA",
-    "numero": "5584999614022"
-  },
-  {
-    "nome": "HEIDI APARECIDA MONTI DA SILVA",
-    "numero": "5516999614162"
-  },
-  {
-    "nome": "ALICE MARIA KOWALSKI",
-    "numero": "5545999625515"
-  },
-  {
-    "nome": "JHEMERSON BODEVAN DE OLIVEIRA",
-    "numero": "5528999643829"
-  },
-  {
-    "nome": "DIANA APARECIDA DA SILVA",
-    "numero": "5566999649004"
-  },
-  {
-    "nome": "RAYSLYS TAYNARA DE LIMA DA SILVA",
-    "numero": "5582999658366"
-  },
-  {
-    "nome": "MARIA LUCIA MENEZES BOMFIM",
-    "numero": "5579999658442"
-  },
-  {
-    "nome": "ELIANE ALVES RIBEIRO",
-    "numero": "5538999661211"
-  },
-  {
-    "nome": "RAIANE DA COSTA FERREIRA",
-    "numero": "5538999681833"
-  },
-  {
-    "nome": "WILIAN NASCIMENTO DA SILVA",
-    "numero": "5571999686717"
-  },
-  {
-    "nome": "SILVIA MARIA DA SILVA OLIVEIRA",
-    "numero": "5519999697489"
-  },
-  {
-    "nome": "JOELMA CRISTINA PAIVA",
-    "numero": "5543999703881"
-  },
-  {
-    "nome": "OBERDAN AUGUSTO PINTO",
-    "numero": "5549999708198"
-  },
-  {
-    "nome": "LUCIANA ALEIXO HONORIO",
-    "numero": "5524999711556"
-  },
-  {
-    "nome": "JOYCI DE FATIMA ALMEIDA AMARO DA SILVA",
-    "numero": "5542999722042"
-  },
-  {
-    "nome": "NILMA DE SOUZA MOURA RIBEIRO",
-    "numero": "5533999728390"
-  },
-  {
-    "nome": "ELANIA APARECIDA GARCIA DA SILVA",
-    "numero": "5567999750984"
-  },
-  {
-    "nome": "KERLY NATALICIA BATISTA SILVA BRAGA",
-    "numero": "5534999755646"
-  },
-  {
-    "nome": "DELMEYRE RODRIGUES DE JESUS",
-    "numero": "5564999768543"
-  },
-  {
-    "nome": "GISLAINE CRISTINA MENDES GONCALVES",
-    "numero": "5533999772455"
-  },
-  {
-    "nome": "ALINE APARECIDA VILLAS BOAS DA SILVA",
-    "numero": "5566999789681"
-  },
-  {
-    "nome": "LOANDRA LAIZ ANDRADE PRADO",
-    "numero": "5516999799577"
-  },
-  {
-    "nome": "MIQUELE MARIA ANDRADE BATISTA",
-    "numero": "5533999822528"
-  },
-  {
-    "nome": "MILENA ALMEIDA DE OLIVEIRA",
-    "numero": "5554999831083"
-  },
-  {
-    "nome": "FRANCIELE KANIGOSKI",
-    "numero": "5554999839609"
-  },
-  {
-    "nome": "TAYSMARIO PEIXOTO PEREIRA",
-    "numero": "5527999848644"
-  },
-  {
-    "nome": "CHEILA KARIANE SERAMIM",
-    "numero": "5542999851175"
-  },
-  {
-    "nome": "CELIA FRANCISCA DA SILVA",
-    "numero": "5564999856864"
-  },
-  {
-    "nome": "MARTINHA ALVES MADUREIRA",
-    "numero": "5538999863752"
-  },
-  {
-    "nome": "ADRIELE DANTAS PEREIRA",
-    "numero": "5519999865527"
-  },
-  {
-    "nome": "RAQUEL DOS SANTOS BADER",
-    "numero": "5568999869860"
-  },
-  {
-    "nome": "ADEILSON JOSE DE LIMA SILVA",
-    "numero": "5519999875846"
-  },
-  {
-    "nome": "ANA MARIA DA SILVA FRANCO GRILLO CARDOZO",
-    "numero": "5541999878637"
-  },
-  {
-    "nome": "LEANDRO CESAR MORAIS E SILVA",
-    "numero": "5538999887377"
-  },
-  {
-    "nome": "DANIEL DA SILVA MARCELINO",
-    "numero": "5547999892451"
-  },
-  {
-    "nome": "ARIANE TAIELY CORREA GOMES",
-    "numero": "5545999892925"
-  },
-  {
-    "nome": "EVA CRISTIANE DOS SANTOS OLIVEIRA",
-    "numero": "5541999904490"
-  },
-  {
-    "nome": "ANA BEATRIZ NUNES BORGES OLIVEIRA",
-    "numero": "5586999919059"
-  },
-  {
-    "nome": "GILDIBERTO BORBOREMA DE ALBUQUERQUE",
-    "numero": "5541999926283"
-  },
-  {
-    "nome": "GABRIEL LUCAS SOUZA DE PAULA",
-    "numero": "5524999931509"
-  },
-  {
-    "nome": "FERNANDA TANDLER BAHR",
-    "numero": "5547999935247"
-  },
-  {
-    "nome": "MAYARA CRISTINA ALVES BATISTA",
-    "numero": "5538999938941"
-  },
-  {
-    "nome": "JOANES GABRIEL DE SENA",
-    "numero": "5531999940816"
-  },
-  {
-    "nome": "KARIME FEITOSA SANTOS",
-    "numero": "557999940975"
-  },
-  {
-    "nome": "MATEUS SANTOS RAMOS",
-    "numero": "5571999942002"
-  },
-  {
-    "nome": "JEFERSON ANTONIO PEROTTONI",
-    "numero": "5554999942014"
-  },
-  {
-    "nome": "ANA CLARA SOUZA SANTOS DE OLIVEIRA",
-    "numero": "5537999972266"
-  },
-  {
-    "nome": "ROZILENI APARECIDA DE JESUS ANDRADE",
-    "numero": "5535999979175"
-  },
-  {
-    "nome": "ADIR LOURES",
-    "numero": "5542999988611"
-  },
-  {
-    "nome": "JOZE ADRIANA MELO SANTOS BORGATO",
-    "numero": "5566999989425"
+    "nome": "Barbearia Los Cabrones",
+    "numero": "5511983963511"
   }
 ]
