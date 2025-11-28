@@ -37,10 +37,10 @@ try {
 
 // === CONFIGURAÇÕES DE INTERVALO ===
 const INTERVALO_MIN_MINUTOS = 10; // mínimo entre mensagens
-const INTERVALO_MAX_MINUTOS = 15; // máximo entre mensagens
-const TAMANHO_LOTE = 10;           // após 8 mensagens, pausa longa
-const PAUSA_LOTE_MIN_MINUTOS = 30; // 30
-const PAUSA_LOTE_MAX_MINUTOS = 50; // 50
+const INTERVALO_MAX_MINUTOS = 13; // máximo entre mensagens
+const TAMANHO_LOTE = 15;           // após 8 mensagens, pausa longa
+const PAUSA_LOTE_MIN_MINUTOS = 15; // 30
+const PAUSA_LOTE_MAX_MINUTOS = 25; // 50
 
 // === HORÁRIO COMERCIAL / DIAS ÚTEIS ===
 const BUSINESS_TZ = process.env.BUSINESS_TZ || "America/Sao_Paulo";
